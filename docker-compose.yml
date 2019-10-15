@@ -34,5 +34,5 @@ services:
       networks:
         - marklogicDHF   
       volumes:
-       - './data-hub-config:/data-hub-config'
-       - './sample-data:/sample-data'
+       - './DHF-config:/DHF-config'
+       - './data:/data'
