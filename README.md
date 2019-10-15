@@ -2,7 +2,18 @@
 
 ## Usage
 
-```ADMIN=admin PASSWORD=yourAdminPassword docker-compose up  ```
+Create a .env file with the following contents:
+
+```
+MARKLOGIC_ADMIN_USERNAME=admin
+MARKLOGIC_ADMIN_PASSWORD=yourPassword
+```
+
+(This will be .gitignored.)
+
+Then start the stack:
+
+``docker-compose up``
 
 
 
