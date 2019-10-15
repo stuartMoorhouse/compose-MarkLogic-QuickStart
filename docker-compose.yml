@@ -4,9 +4,8 @@ networks:
   marklogicDHF:
 
 services:
-
     marklogic:
-      image: store/marklogicdb/marklogic-server:< insert tagname>
+      image: store/marklogicdb/marklogic-server:${ML_VERSION}
       container_name: marklogic.local
       environment:
         - MARKLOGIC_INIT=true
@@ -14,6 +13,8 @@ services:
         - MARKLOGIC_ADMIN_PASSWORD=${PASSWORD}
         - TZ=Europe/Prague
       ports:
-        - 8997-9010:7997-8010
+        - 5997-6010:7997-8010
+      volumes:
+      - ./volumes/marklogic.local/:/var/opt/MarkLogic/
       networks:
       - marklogicDHF
