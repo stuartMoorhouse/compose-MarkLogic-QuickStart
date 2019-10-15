@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description xmlns:x="http://www.jenitennison.com/xslt/xspec" stylesheet="generate-call-or-put-spread-data.xsl">
+    
+    <!-- 001 identity transform -->
+    <x:scenario label="If an element that doesn't match a template is found">
+        <x:context>
+            <para class="foo">Foo bar</para>
+        </x:context>
+     <x:expect label="the identity transform is applied">
+         <para class="foo">Foo bar</para>
+     </x:expect>
+    </x:scenario>
+    
+    <x:scenario label="if a messageID element is found">
+        <x:context>
+            <messageId></messageId>
+        </x:context>
+        <x:expect label="add a 'random' id">
+            <messageId>random</messageId>
+        </x:expect>
+    </x:scenario>
+    
+    <x:scenario label="if a creationTimestamp element is found">
+        <x:context>
+            <creationTimestamp>2000-08-01T08:57:00Z</creationTimestamp>
+        </x:context>
+        <x:expect label="add the current date-time for its value">
+            <creationTimestamp>2000-08-01T08:57:00Z</creationTimestamp>
+        </x:expect>
+    </x:scenario>
+    
+    <x:scenario label="if a correlationId element is found">
+        <x:context>
+            <correlationId correlationIdScheme="http://www.drkw.com/conversationId/OTC">OTCCallorPutSpread45678</correlationId>
+        </x:context>
+        <x:expect label="add a 'random' id">
+            <correlationId correlationIdScheme="http://www.drkw.com/conversationId/OTC">random</correlationId>
+        </x:expect>
+    </x:scenario>
+    
+    
+</x:description>
