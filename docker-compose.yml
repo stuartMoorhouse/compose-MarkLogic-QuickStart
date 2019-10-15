@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks:
+  marklogicDHF
+
+services:
+
+    marklogic:
+      image: store/marklogicdb/marklogic-server:< insert tagname>
+      container_name: marklogic.local
+      environment:
+        - MARKLOGIC_INIT=true
+        - MARKLOGIC_ADMIN_USERNAME=${ADMIN}
+        - MARKLOGIC_ADMIN_PASSWORD=${PASSWORD}
+        - TZ=Europe/Prague
+      ports:
+        - 8997-9010:7997-8010
+      networks:
+      - marklogicDHF
