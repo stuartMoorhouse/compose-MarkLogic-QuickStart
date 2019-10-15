@@ -4,10 +4,10 @@ networks:
   marklogicDHF:
 
 services:
-    marklogic.local:
+    marklogic.dhf.local:
       image: store/marklogicdb/marklogic-server:${ML_VERSION}
-      hostname: marklogicDHF.local
-      container_name: marklogicDHF.local
+      hostname: marklogic.dhf.local
+      container_name: marklogic.dhf.local
       environment:
         - MARKLOGIC_INIT=true
         - MARKLOGIC_ADMIN_USERNAME=${ADMIN}
@@ -19,18 +19,20 @@ services:
         - marklogicDHF
 
 
-    quickStart:
-      build: ./quickStartDockerfile
-      depends_on: 
-        - 'marklogic'
-      hostname: quickstart.local
-      container_name: quickstart.local
-      environment:
+    quick.start.local:
+      build: 
+        context: .
+        dockerfile: quickstart.Dockerfile
+        args:
         - quickstart_download_url=${QUICK_START_URL}
+      depends_on:     
+        - marklogic.dhf.local
+      hostname: quick_start.local
+      container_name: quick_start.local
       ports:
-        - 9080:8080
+       - 9080:8080
       networks:
-        - marklogicDHF      
-      #volumes:
-        #- './data-hub-config:/data-hub-config'
-        #- './sample-data:/sample-data'
+        - marklogicDHF   
+      volumes:
+       - './data-hub-config:/data-hub-config'
+       - './sample-data:/sample-data'
