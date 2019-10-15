@@ -1,7 +1,7 @@
 version: '3.7'
 
 networks:
-  marklogicDHF
+  marklogicDHF:
 
 services:
 
