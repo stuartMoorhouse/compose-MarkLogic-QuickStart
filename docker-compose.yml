@@ -14,7 +14,9 @@ services:
         - MARKLOGIC_ADMIN_PASSWORD=${PASSWORD}
         - TZ=Europe/Prague
       ports:
-        - 17997-18010:7997-8010
+        - 17997-18025:7997-8025
+      volumes:
+        - ./volumes/marklogic.dhf.local/:/var/opt/MarkLogic/
       networks:
         - marklogicDHF
 
@@ -34,5 +36,5 @@ services:
       networks:
         - marklogicDHF   
       volumes:
-       - './DHF-config:/DHF-config'
-       - './data:/data'
+       - ./DHF-config:/DHF-config
+       - ./data:/data
