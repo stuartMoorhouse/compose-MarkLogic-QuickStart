@@ -2,12 +2,13 @@
 
 ## Usage
 
-Create a .env file with the following contents:
+Create a .env file, for example:
 
 ```
-MARKLOGIC_ADMIN_USERNAME=admin
-MARKLOGIC_ADMIN_PASSWORD=yourPassword
+ADMIN=admin
+PASSWORD=yourPassword
 ML_VERSION=10.0-2-dev-centos
+QUICK_START_URL=https://github.com/marklogic/marklogic-data-hub/releases/download/v5.0.3/marklogic-datahub-5.0.3.war
 ```
 
 (This will be .gitignored.)
