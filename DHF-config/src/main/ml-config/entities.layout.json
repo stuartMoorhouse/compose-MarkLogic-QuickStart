@@ -1,0 +1,16 @@
+{
+  "otc-call-or-put-spread-entity" : {
+    "x" : 10,
+    "y" : 115,
+    "width" : 350,
+    "height" : 188,
+    "vertices" : { }
+  },
+  "otc-call-or-put-spread-alert-service" : {
+    "x" : 11,
+    "y" : 361,
+    "width" : 350,
+    "height" : 144,
+    "vertices" : { }
+  }
+}

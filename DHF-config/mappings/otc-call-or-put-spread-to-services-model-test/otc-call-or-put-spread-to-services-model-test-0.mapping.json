@@ -1,0 +1,10 @@
+{
+  "lang" : "zxx",
+  "name" : "otc-call-or-put-spread-to-services-model-test",
+  "description" : "",
+  "version" : 0,
+  "targetEntityType" : "http://example.org/otc-call-or-put-spread-alert-service-0.0.1/otc-call-or-put-spread-alert-service",
+  "sourceContext" : "/",
+  "sourceURI" : "",
+  "properties" : { }
+}

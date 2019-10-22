@@ -1,0 +1,10 @@
+{
+  "lang" : "zxx",
+  "name" : "otc-call-or-put-spread-to-canonical-otc-call-or-put-spread-to-canonical-entity",
+  "description" : "",
+  "version" : 0,
+  "targetEntityType" : "http://example.org/otc-call-or-put-spread-entity-0.0.1/otc-call-or-put-spread-entity",
+  "sourceContext" : "/",
+  "sourceURI" : "",
+  "properties" : { }
+}

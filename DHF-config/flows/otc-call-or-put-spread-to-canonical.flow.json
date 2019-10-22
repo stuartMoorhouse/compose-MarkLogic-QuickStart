@@ -1,0 +1,38 @@
+{
+  "name" : "otc-call-or-put-spread-to-canonical",
+  "description" : "",
+  "batchSize" : 100,
+  "threadCount" : 4,
+  "stopOnError" : false,
+  "options" : { },
+  "version" : 0,
+  "steps" : {
+    "1" : {
+      "name" : "otc-call-or-put-spread-to-canonical-entity",
+      "description" : "",
+      "options" : {
+        "additionalCollections" : [ ],
+        "sourceQuery" : "cts.collectionQuery([\"ingest-otc-call-or-put-spread\"])",
+        "mapping" : {
+          "name" : "otc-call-or-put-spread-to-canonical-otc-call-or-put-spread-to-canonical-entity",
+          "version" : 2
+        },
+        "targetEntity" : "otc-call-or-put-spread-entity",
+        "sourceDatabase" : "data-hub-STAGING",
+        "collections" : [ "otc-call-or-put-spread-to-canonical-entity", "otc-call-or-put-spread-entity" ],
+        "sourceCollection" : "ingest-otc-call-or-put-spread",
+        "outputFormat" : "json",
+        "targetDatabase" : "data-hub-FINAL"
+      },
+      "customHook" : { },
+      "retryLimit" : null,
+      "batchSize" : null,
+      "threadCount" : null,
+      "stepDefinitionName" : "default-mapping",
+      "stepDefinitionType" : "MAPPING",
+      "mappingStep" : true,
+      "customStep" : false,
+      "mappingName" : "otc-call-or-put-spread-to-canonical-otc-call-or-put-spread-to-canonical-entity"
+    }
+  }
+}

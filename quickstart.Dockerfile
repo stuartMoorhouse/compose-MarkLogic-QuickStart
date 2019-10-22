@@ -5,6 +5,8 @@ FROM openjdk:8-jdk-alpine
 
 ENV quickstart_download_url=https://github.com/marklogic/marklogic-data-hub/releases/download/v5.0.3/marklogic-datahub-5.0.3.war
 
+RUN mkdir DHF-config
+
 VOLUME /tmp
 
 RUN wget -O   app.jar $quickstart_download_url

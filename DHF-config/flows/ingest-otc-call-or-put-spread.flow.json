@@ -1,0 +1,45 @@
+{
+  "name" : "ingest-otc-call-or-put-spread",
+  "description" : "",
+  "batchSize" : 100,
+  "threadCount" : 4,
+  "stopOnError" : false,
+  "options" : { },
+  "version" : 0,
+  "steps" : {
+    "1" : {
+      "name" : "ingest-otc-call-or-put-spread",
+      "description" : "",
+      "options" : {
+        "additionalCollections" : [ ],
+        "headers" : {
+          "sources" : [ {
+            "name" : "ingest-otc-call-or-put-spread"
+          } ],
+          "createdOn" : "currentDateTime",
+          "createdBy" : "currentUser"
+        },
+        "sourceQuery" : "cts.collectionQuery([])",
+        "collections" : [ "ingest-otc-call-or-put-spread" ],
+        "permissions" : "rest-reader,read,rest-writer,update",
+        "outputFormat" : "xml",
+        "targetDatabase" : "data-hub-STAGING"
+      },
+      "customHook" : { },
+      "retryLimit" : null,
+      "batchSize" : null,
+      "threadCount" : null,
+      "stepDefinitionName" : "default-ingestion",
+      "stepDefinitionType" : "INGESTION",
+      "fileLocations" : {
+        "inputFilePath" : "/data",
+        "inputFileType" : "xml",
+        "outputURIReplacement" : "",
+        "separator" : ","
+      },
+      "mappingStep" : false,
+      "customStep" : false,
+      "mappingName" : null
+    }
+  }
+}
