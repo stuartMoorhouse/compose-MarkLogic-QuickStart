@@ -35,10 +35,20 @@ services:
       ports:
        - ${quickStartPortMapping}:8080
       volumes:
-       - ./${stackName}.DHF-config:/DHF-config
-       - ./${stackName}.data:/data
+       - ./DHF-config:/DHF-config
+       - ./data:/data
       networks:
        - marklogicDHF  
+
+    gradle:
+      build: 
+        context: .
+        dockerfile: gradle.Dockerfile
+      volumes:
+        - ./DHF-config:/DHF-config
+        - ./data:/data
+      networks:
+        - marklogicDHF
 
 
 
