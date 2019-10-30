@@ -20,5 +20,8 @@ Then start the stack:
 
 ``docker-compose up``
 
+Go to the QuickStart application on your browser by default this will be at http://localhost:9080 unless you've change the quickStartPortMapping value in your .env file.
+
+Set the MarkLogic host to ${stackName}.dhf.local. For example, if you set stackName to be "test" in the .env file, set it to test.dhf.local
 
 
