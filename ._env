@@ -1,0 +1,9 @@
+admin=admin
+password=marhaba
+mlVersion=10.0-2-dev-centos
+quickStartURL=https://github.com/marklogic/marklogic-data-hub/releases/download/v5.0.3/marklogic-datahub-5.0.3.war
+stackName=prepush
+marklogicInstance=prepush.dhf.local
+markLogicPortMapping=37997-38025
+quickStartPortMapping=3080
+gradleProperties=mlHost=prepush.dhf.local
