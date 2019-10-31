@@ -5,6 +5,6 @@
 volumes/
 setup.sh
 teardown.sh
-DHF-config
+DHF-config/*
 quick-start-urls.txt
 marklogic-images.txt
