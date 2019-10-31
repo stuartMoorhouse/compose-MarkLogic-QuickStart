@@ -50,6 +50,7 @@ services:
         dockerfile: gradle.Dockerfile
       depends_on: 
         - quick.start
+      container_name: ${stackName}.gradle
       volumes:
         - ./DHF-config:/DHF-config
         - ./data:/data
