@@ -16,7 +16,7 @@ services:
       ports:
         - ${markLogicPortMapping}:7997-8025
       volumes:
-        - ./volumes/${stackName}.dhf.local/:/var/opt/MarkLogic/
+        - ./volumes/${stackName}.dhf.local/:/var/opt/MarkLogic/:delegated
       networks:
         - marklogicDHF
 
