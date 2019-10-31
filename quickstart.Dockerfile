@@ -3,11 +3,7 @@
 
 FROM openjdk:8-jdk-alpine
 
-ARG quickstart_download_url=$quickstart_download_url
-
-RUN mkdir DHF-config
-
-VOLUME /tmp
+ARG quickstart_download_url
 
 RUN wget -O   app.jar "${quickstart_download_url}"
 

@@ -44,6 +44,8 @@ services:
       build: 
         context: .
         dockerfile: gradle.Dockerfile
+      depends_on: 
+        - quick.start
       volumes:
         - ./DHF-config:/DHF-config
         - ./data:/data
