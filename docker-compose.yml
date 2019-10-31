@@ -27,6 +27,10 @@ services:
         dockerfile: quickstart.Dockerfile
         args:
           - quickstart_download_url=${quickStartURL}
+      environment:
+        - MARKLOGIC_ADMIN_USERNAME=${admin}
+        - MARKLOGIC_ADMIN_PASSWORD=${password}
+        - stackName=${stackName}
       image: ${stackName}.quick.start
       depends_on:     
         - marklogic.dhf.local
