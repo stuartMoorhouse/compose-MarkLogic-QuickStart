@@ -1,14 +1,74 @@
 #!/usr/bin/env bash
 
+
+#### check values are one of a set allowed values
+#### $1 = array of allowed values
+#### $2 = value to check
+check_values () {
+value="$1"
+array="$2"
+allowedValues="${array[@]}"
+result="no match"
+for i in "${allowedValues[@]}" ;
+	do
+		 if [ "$i" = "$value" ]; then
+				result='match'
+				echo "matched | i = ${1} and value = ${value} and allowedValues =${allowedValues[@]}"
+			else
+				echo "didn't match | i = '${1}' and value = '${value}' and allowedValues =${allowedValues[@]}"
+		fi
+	done
+	if [ "$result" = 'match' ]; then
+			allowed="true"
+			#allowed="value = ${value} and allowedValues=${allowedValues}"
+		else
+			#allowed="value = ${value} and allowedValues=${allowedValues}"
+			allowed="false"
+	fi
+
+}
+
+
 #### get variables from user
-echo ""
-echo ""
-echo "Welcome to the MarkLogic/ DHF/ QuickStart Docker application"
-echo ""
-echo "Which MarkLogic version would you like, out of 9.0-9 (CentOS), 9.0-10 (CentOS and Red Hat UBI), 10.0-1 (CentOS and Red Hat UBI), and 10.0-2 (CentOS and Red Hat UBI)?"
-echo " > Please enter '1' (for 9.0-9), '2', (for 9.0-10), '3' (for 10.0-1), or '4' (for 10.0-2):"
-read version
-echo ""
+get_version_input_dialog () {
+	echo ""
+	echo ""
+	echo "Welcome to the MarkLogic/ DHF/ QuickStart Docker application"
+	echo ""
+	echo "Which MarkLogic version would you like, out of 9.0-9 (CentOS), 9.0-10 (CentOS and Red Hat UBI), 10.0-1 (CentOS and Red Hat UBI), and 10.0-2 (CentOS and Red Hat UBI)?"
+	echo " > Please enter '1' (for 9.0-9), '2', (for 9.0-10), '3' (for 10.0-1), or '4' (for 10.0-2):"
+	read version
+}
+
+#### $1 = array of allowed values
+get_version_error_dialog () {
+	allowed_values=$1
+	echo "Please enter one of these values: ${allowed_values[@]}"
+}
+
+get_version () {
+	allowed_values=(1 2 3 4)
+	get_version_input_dialog
+	# get_version_input_dialog returns a $version variable:
+	echo "*** this version = ${version}"
+	check_values "${version}" "${allowed_values[@]}" 
+	# check_values returns an $allowed value ("true" or "false") variable:
+	echo "valueCheck returned ${allowed}"
+
+	#if  [[ "${valueCheck}" = "false" ]]
+	#	then 
+	#		get_version_error_dialog ${allowed_values}
+	#		get_version	
+	#    else
+	#    	echo "you chose ${version}"
+	#fi
+}
+
+get_version
+
+
+
+
 
 echo "Would you like that on CentOS or Red Hat UBI?"
 echo " > Please enter 'c' (for CentOS) or 'r' (for Red Hat UBI):"

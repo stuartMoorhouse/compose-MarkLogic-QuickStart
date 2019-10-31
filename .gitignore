@@ -3,3 +3,6 @@
 .gradle
 .env
 volumes/
+setup.sh
+teardown.sh
+DHF-config
