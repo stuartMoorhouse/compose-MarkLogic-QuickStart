@@ -7,4 +7,10 @@ ARG quickstart_download_url
 
 RUN wget -O   app.jar "${quickstart_download_url}"
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+COPY quickstart-entrypoint.sh .
+
+RUN chmod +x quickstart-entrypoint.sh
+
+ENTRYPOINT ["./quickstart-entrypoint.sh"]
+
+CMD ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
