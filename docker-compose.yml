@@ -27,12 +27,11 @@ services:
         dockerfile: quickstart.Dockerfile
         args:
           - quickstart_download_url=${quickStartURL}
-        image: quick.start
+      image: quick.start
       environment:
         - MARKLOGIC_ADMIN_USERNAME=${admin}
         - MARKLOGIC_ADMIN_PASSWORD=${password}
-        - stackName=${stackName}
-      image: ${stackName}.quick.start
+        - STACK_NAME=${stackName}
       depends_on:     
         - marklogic.dhf.local
       hostname: ${stackName}.quick_start
@@ -49,7 +48,7 @@ services:
       build: 
         context: .
         dockerfile: gradle.Dockerfile
-        image: dhf.gradle
+      image: dhf.gradle
       depends_on: 
         - quick.start
       container_name: ${stackName}.gradle
