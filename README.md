@@ -8,6 +8,7 @@ Create a .env file, for example:
 admin=admin
 password=yourPasswrd
 mlVersion=10.0-2-dev-centos
+DHFversion=5.0.3
 quickStartURL=https://github.com/marklogic/marklogic-data-hub/releases/download/v5.0.3/marklogic-datahub-5.0.3.war
 stackName=yourStack
 markLogicPortMapping=27997-28025

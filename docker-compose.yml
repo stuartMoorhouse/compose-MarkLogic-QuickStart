@@ -40,8 +40,8 @@ services:
       ports:
        - ${quickStartPortMapping}:8080
       volumes:
-       - ./DHF-config:/DHF-config
-       - ./data:/data
+       - ./DHF-config:/DHF-config:delegated
+       - ./data:/data:delegated
       networks:
        - marklogicDHF  
 
@@ -54,8 +54,8 @@ services:
         - quick.start
       container_name: ${stackName}.gradle
       volumes:
-        - ./DHF-config:/DHF-config
-        - ./data:/data
+        - ./DHF-config:/DHF-config:delegated
+        - ./data:/data:delegated
       networks:
         - marklogicDHF
 
