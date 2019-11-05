@@ -32,6 +32,7 @@ services:
         - MARKLOGIC_ADMIN_USERNAME=${admin}
         - MARKLOGIC_ADMIN_PASSWORD=${password}
         - STACK_NAME=${stackName}
+        - DHF_VERSION=${DHFversion}
       depends_on:     
         - marklogic.dhf.local
       hostname: ${stackName}.quick_start
